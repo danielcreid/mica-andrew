@@ -1,0 +1,54 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// General
+//
+////////////////////////////////////////////////////////////////////////////////
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body { height: 100%; }
+
+body { overflow-x: hidden; }
+
+html {
+    color:         $text-color;
+    font-family:   $base-font-family;
+    font-weight:   $base-font-weight;
+    font-style:    $base-font-style;
+    font-size:     $base-font-size;
+    line-height:   $base-line-height;
+}
+
+img { max-width: 100%; }
+
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover {
+        color: darken($link-color, 25%);
+        text-decoration: underline;
+    }
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Type
+//
+////////////////////////////////////////////////////////////////////////////////
+
+// Remove default list styling
+ul,
+ol,
+dl { list-style: none; }
