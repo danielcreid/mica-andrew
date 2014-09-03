@@ -80,6 +80,14 @@ $color-map: (
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+$screen--small: 768px;
+$screen--medium: 1024px;
+$screen--large: 1280px;
+
+$gutter--small: 1rem;
+$gutter--medium: 1.5rem;
+$gutter--large: 2.25rem;
+
 $base-font-family: 'Crimson Text', serif;
 $base-font-weight: 400;
 $base-font-style: normal;

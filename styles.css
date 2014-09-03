@@ -459,11 +459,9 @@ ol {
   list-style: none;
 }
 
-h1,
 h2,
-h3,
-h4 {
-  font-weight: 700;
+h3 {
+  font-weight: 400;
 }
 
 h1 {
@@ -481,6 +479,7 @@ h3 {
 blockquote {
   font-size: 1.688rem;
   font-weight: 700;
+  font-style: italic;
 }
 
 .format-text h1 {
@@ -562,6 +561,170 @@ blockquote {
 .list--input input[type="radio"] {
   float: left;
   margin-left: -1.5em;
+}
+
+html:before,
+html:after,
+body:before,
+body:after {
+  position: fixed;
+  content: '';
+  background-color: #ad8f6d;
+}
+
+html:before,
+body:before {
+  right: 0;
+  left: 0;
+  height: 0.444rem;
+}
+
+html:after,
+body:after {
+  top: 0;
+  bottom: 0;
+  width: 0.444rem;
+}
+
+html:before {
+  top: 0;
+}
+
+html:after {
+  right: 0;
+}
+
+body:before {
+  bottom: 0;
+}
+
+body:after {
+  left: 0;
+}
+
+body {
+  padding: 0.444rem;
+}
+
+.main-wrap {
+  margin: 0.444rem auto;
+}
+@media screen and (min-width: 1024px) {
+  .main-wrap {
+    max-width: 1024px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main-wrap {
+    max-width: 1280px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 1.444rem;
+    width: 11.391rem;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .nav {
+    top: 1.944rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .nav {
+    top: 2.694rem;
+  }
+}
+
+.section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .section {
+    margin-left: 12.391rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section {
+    margin-left: 12.891rem;
+  }
+  .section.intro {
+    padding-top: 1.5rem;
+  }
+  .section.rsvp {
+    padding-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .section {
+    margin-left: 13.641rem;
+  }
+  .section.intro {
+    padding-top: 2.25rem;
+  }
+  .section.rsvp {
+    padding-bottom: 2.25rem;
+  }
+}
+
+.intro {
+  text-align: center;
+}
+.intro__banner {
+  height: 11.391rem;
+  background: url("images/banner.jpg") 0 0 no-repeat;
+  background-size: cover;
+}
+@media screen and (min-width: 601px) {
+  .intro__banner {
+    height: 17.086rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .intro__banner {
+    height: 25.629rem;
+  }
+}
+.intro__text {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+@media screen and (min-width: 1024px) {
+  .intro__text {
+    padding-top: 3.375rem;
+    padding-bottom: 3.375rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .intro__text {
+    padding-top: 5.063rem;
+    padding-bottom: 5.063rem;
+  }
+}
+.intro__header {
+  line-height: 1;
+}
+.intro__amp {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 0.667;
+}
+@media screen and (min-width: 1024px) {
+  .intro__amp {
+    display: inline;
+    margin-bottom: 0;
+  }
+}
+.intro__date {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
 }
 
 /*# sourceMappingURL=styles.css.map */

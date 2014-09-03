@@ -1,0 +1,83 @@
+$nav-width: 11.391rem;
+
+// Body border
+html:before,
+html:after,
+body:before,
+body:after {
+    position: fixed;
+    content: '';
+    background-color: get-color(brown);
+}
+
+html:before,
+body:before {
+    right: 0;
+    left: 0;
+    height: 0.444rem;
+}
+
+html:after,
+body:after {
+    top: 0;
+    bottom: 0;
+    width: 0.444rem;
+}
+
+html:before { top: 0; }
+html:after { right: 0; }
+body:before { bottom: 0; }
+body:after { left: 0; }
+
+body { padding: 0.444rem; }
+
+.main-wrap {
+    margin: 0.444rem auto;
+
+    @include mq($screen--medium) {
+        max-width: $screen--medium;
+    }
+
+    @include mq($screen--large) {
+        max-width: $screen--large;
+    }
+}
+
+.nav {
+    @include mq($screen--small) {
+        position: fixed;
+        top: 0.444rem + $gutter--small;
+        width: $nav-width;
+        text-align: center;
+    }
+
+    @include mq($screen--medium) {
+        top: 0.444rem + $gutter--medium;
+    }
+
+    @include mq($screen--large) {
+        top: 0.444rem + $gutter--large;
+    }
+}
+
+.section {
+    padding-left: $gutter--small;
+    padding-right: $gutter--small;
+
+    @include mq($screen--small) {
+        margin-left: $nav-width + $gutter--small;
+    }
+
+    @include mq($screen--medium) {
+        margin-left: $nav-width + $gutter--medium;
+
+        &.intro { padding-top: $gutter--medium; }
+        &.rsvp { padding-bottom: $gutter--medium; }
+    }
+
+    @include mq($screen--large) {
+        margin-left: $nav-width + $gutter--large;
+        &.intro { padding-top: $gutter--large; }
+        &.rsvp { padding-bottom: $gutter--large; }
+    }
+}

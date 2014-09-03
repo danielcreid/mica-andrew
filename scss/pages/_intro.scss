@@ -1,0 +1,58 @@
+.intro {
+    text-align: center;
+
+    &__banner {
+        height: 11.391rem;
+        background: url('images/banner.jpg') 0 0 no-repeat;
+        background-size: cover;
+
+        @include mq(601px) {
+            height: 17.086rem;
+        }
+
+        @include mq($screen--medium) {
+        }
+
+        @include mq($screen--medium) {
+            height: 25.629rem;
+        }
+    }
+
+    &__text {
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
+
+        @include mq($screen--medium) {
+            padding-top: 3.375rem;
+            padding-bottom: 3.375rem;
+        }
+
+        @include mq($screen--large) {
+            padding-top: 5.063rem;
+            padding-bottom: 5.063rem;
+        }
+    }
+
+    &__header {
+        line-height: 1;
+    }
+
+    &__amp {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 2.25rem;
+        font-weight: 400;
+        line-height: 0.667;
+
+        @include mq($screen--medium) {
+            display: inline;
+            margin-bottom: 0;
+        }
+    }
+
+    &__date {
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1;
+    }
+}
