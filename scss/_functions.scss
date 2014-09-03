@@ -57,6 +57,15 @@
   @return $number / ($number * 0 + 1);
  }
 
+// Add percentage of white to a color
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
 
 // Get the value of a color defined in our global color map
 @function get-color($color, $tone: 'base') {

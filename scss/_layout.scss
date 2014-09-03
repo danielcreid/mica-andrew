@@ -44,6 +44,11 @@ body { padding: 0.444rem; }
 }
 
 .nav {
+    a {
+        color: get-color(blue);
+        font-weight: 700;
+    }
+
     @include mq($screen--small) {
         position: fixed;
         top: 0.444rem + $gutter--small;
@@ -61,22 +66,89 @@ body { padding: 0.444rem; }
 }
 
 .section {
-    padding-left: $gutter--small;
     padding-right: $gutter--small;
+    padding-bottom: 5.063rem;
+    padding-left: $gutter--small;
+
+
+    &__header {
+        position: relative;
+        margin-bottom: $gutter--small;
+        padding: 0.667rem 48px;
+        border-top: 1px solid get-color(brown);
+        border-bottom: 1px solid get-color(brown);
+        text-align: center;
+
+        h2 {
+            padding-bottom: 5px;
+            line-height: 1;
+        }
+
+        @include mq(601px) {
+            padding-right: 64px;
+            padding-left: 64px;
+        }
+
+        @include mq($screen--medium) {
+            margin-bottom: $gutter--medium;
+        }
+
+        @include mq($screen--large) {
+            margin-bottom: $gutter--large;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            margin-top: -12px;
+            height: 24px;
+            width: 24px;
+            background: url('images/logo.png') center no-repeat;
+            background-size: 24px;
+
+
+            @include mq($screen--small) {
+                margin-top: -20px;
+                height: 40px;
+                width: 40px;
+                background-size: 40px;
+            }
+        }
+
+        &:before { left: 0.667rem; }
+        &:after { right: 0.667rem; }
+    }
+
+    &__amp {
+        display: block;
+        font-size: 1.5rem;
+
+        @include mq(601px) {
+            display: inline;
+        }
+    }
 
     @include mq($screen--small) {
         margin-left: $nav-width + $gutter--small;
+        padding-right: 0;
+        padding-left: 0;
     }
 
     @include mq($screen--medium) {
         margin-left: $nav-width + $gutter--medium;
 
-        &.intro { padding-top: $gutter--medium; }
+        &.intro {
+            padding-top: $gutter--medium;
+            padding-bottom: 0;
+        }
         &.rsvp { padding-bottom: $gutter--medium; }
     }
 
     @include mq($screen--large) {
         margin-left: $nav-width + $gutter--large;
+
         &.intro { padding-top: $gutter--large; }
         &.rsvp { padding-bottom: $gutter--large; }
     }

@@ -482,6 +482,15 @@ blockquote {
   font-style: italic;
 }
 
+.coming-soon {
+  padding: 1rem;
+  background-color: #ff614d;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f8ecc2;
+  text-align: center;
+}
+
 .format-text h1 {
   font-size: 2em;
   margin-top: 0.67em;
@@ -620,6 +629,10 @@ body {
   }
 }
 
+.nav a {
+  color: #031033;
+  font-weight: 700;
+}
 @media screen and (min-width: 768px) {
   .nav {
     position: fixed;
@@ -640,12 +653,76 @@ body {
 }
 
 .section {
-  padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 5.063rem;
+  padding-left: 1rem;
+}
+.section__header {
+  position: relative;
+  margin-bottom: 1rem;
+  padding: 0.667rem 48px;
+  border-top: 1px solid #ad8f6d;
+  border-bottom: 1px solid #ad8f6d;
+  text-align: center;
+}
+.section__header h2 {
+  padding-bottom: 5px;
+  line-height: 1;
+}
+@media screen and (min-width: 601px) {
+  .section__header {
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section__header {
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .section__header {
+    margin-bottom: 2.25rem;
+  }
+}
+.section__header:before, .section__header:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+  height: 24px;
+  width: 24px;
+  background: url("images/logo.png") center no-repeat;
+  background-size: 24px;
+}
+@media screen and (min-width: 768px) {
+  .section__header:before, .section__header:after {
+    margin-top: -20px;
+    height: 40px;
+    width: 40px;
+    background-size: 40px;
+  }
+}
+.section__header:before {
+  left: 0.667rem;
+}
+.section__header:after {
+  right: 0.667rem;
+}
+.section__amp {
+  display: block;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 601px) {
+  .section__amp {
+    display: inline;
+  }
 }
 @media screen and (min-width: 768px) {
   .section {
     margin-left: 12.391rem;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -654,6 +731,7 @@ body {
   }
   .section.intro {
     padding-top: 1.5rem;
+    padding-bottom: 0;
   }
   .section.rsvp {
     padding-bottom: 1.5rem;
