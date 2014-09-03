@@ -52,6 +52,11 @@
     @return $map;
 }
 
+// Strips units from a number
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+ }
+
 
 // Get the value of a color defined in our global color map
 @function get-color($color, $tone: 'base') {

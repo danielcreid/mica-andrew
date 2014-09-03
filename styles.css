@@ -404,8 +404,6 @@ th {
 *:before,
 *:after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html,
@@ -423,7 +421,7 @@ html {
   font-family: "Crimson Text", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 62.5%;
+  font-size: 112.5%;
   line-height: 1.5;
 }
 
@@ -442,8 +440,47 @@ a:hover {
 
 ul,
 ol,
-dl {
+h1,
+h2,
+h3,
+h4,
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
   list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.375rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+blockquote {
+  font-size: 1.688rem;
+  font-weight: 700;
 }
 
 .format-text h1 {

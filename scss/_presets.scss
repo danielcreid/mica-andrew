@@ -1,0 +1,82 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// General
+//
+////////////////////////////////////////////////////////////////////////////////
+
+*,
+*:before,
+*:after { box-sizing: border-box; }
+
+html,
+body { height: 100%; }
+
+body { overflow-x: hidden; }
+
+html {
+    background-color: get-color(cream);
+    color:            $base-text-color;
+    font-family:      $base-font-family;
+    font-weight:      $base-font-weight;
+    font-style:       $base-font-style;
+    font-size:        $base-font-size;
+    line-height:      $base-line-height;
+}
+
+img { max-width: 100%; }
+
+a {
+    color: $base-link-color;
+    text-decoration: none;
+
+    &:hover {
+        color: darken($base-link-color, 25%);
+        text-decoration: underline;
+    }
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Type
+//
+////////////////////////////////////////////////////////////////////////////////
+
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+// Remove default list styling
+ul,
+ol { list-style: none; }
+
+h1,
+h2,
+h3,
+h4 { font-weight: 700; }
+
+h1 { font-size: 3.375rem; }
+
+h2 { font-size: 2.25rem; }
+
+h3 { font-size: 1.5rem; }
+
+blockquote {
+    font-size: 1.688rem;
+    font-weight: 700;
+}
