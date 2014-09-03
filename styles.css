@@ -617,6 +617,7 @@ body {
 
 .main-wrap {
   margin: 0.444rem auto;
+  padding: 0 0.444rem;
 }
 @media screen and (min-width: 1024px) {
   .main-wrap {
@@ -636,26 +637,24 @@ body {
 @media screen and (min-width: 768px) {
   .nav {
     position: fixed;
-    top: 1.444rem;
+    top: 0.888rem;
     width: 11.391rem;
     text-align: center;
   }
 }
 @media screen and (min-width: 1024px) {
   .nav {
-    top: 1.944rem;
+    top: 2.388rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .nav {
-    top: 2.694rem;
+    top: 3.138rem;
   }
 }
 
 .section {
-  padding-right: 1rem;
   padding-bottom: 5.063rem;
-  padding-left: 1rem;
 }
 .section__header {
   position: relative;
@@ -721,8 +720,6 @@ body {
 @media screen and (min-width: 768px) {
   .section {
     margin-left: 12.391rem;
-    padding-right: 0;
-    padding-left: 0;
   }
 }
 @media screen and (min-width: 1024px) {

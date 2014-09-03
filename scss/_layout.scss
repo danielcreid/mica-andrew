@@ -33,6 +33,7 @@ body { padding: 0.444rem; }
 
 .main-wrap {
     margin: 0.444rem auto;
+    padding: 0 0.444rem;
 
     @include mq($screen--medium) {
         max-width: $screen--medium;
@@ -51,25 +52,22 @@ body { padding: 0.444rem; }
 
     @include mq($screen--small) {
         position: fixed;
-        top: 0.444rem + $gutter--small;
+        top: 0.444rem * 2;
         width: $nav-width;
         text-align: center;
     }
 
     @include mq($screen--medium) {
-        top: 0.444rem + $gutter--medium;
+        top:  0.444rem * 2 + $gutter--medium;
     }
 
     @include mq($screen--large) {
-        top: 0.444rem + $gutter--large;
+        top:  0.444rem * 2 + $gutter--large;
     }
 }
 
 .section {
-    padding-right: $gutter--small;
     padding-bottom: 5.063rem;
-    padding-left: $gutter--small;
-
 
     &__header {
         position: relative;
@@ -132,8 +130,6 @@ body { padding: 0.444rem; }
 
     @include mq($screen--small) {
         margin-left: $nav-width + $gutter--small;
-        padding-right: 0;
-        padding-left: 0;
     }
 
     @include mq($screen--medium) {
