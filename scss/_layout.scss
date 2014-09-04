@@ -46,7 +46,12 @@ body { padding: 0.444rem; }
 }
 
 .nav {
+    margin-bottom: 1rem;
+    text-align:  center;
+
     a {
+        display: block;
+        padding: 5px;
         color: get-color(blue);
         font-weight: 700;
     }
