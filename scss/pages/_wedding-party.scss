@@ -1,0 +1,168 @@
+.wedding-party {
+    @extend %clearfix;
+
+    &__bridesmaids {
+        @include mq($screen--small) {
+            float: left;
+            width: 50%;
+        }
+    }
+
+    &__groomsmen {
+        @include mq($screen--small) {
+            float: left;
+            width: 50%;
+        }
+    }
+}
+
+.person {
+    position: relative;
+    padding: 18px;
+    text-align: center;
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 1rem;
+        bottom: 0;
+        left: 1rem;
+        border-bottom: 1px solid get-color(brown);
+
+        @include mq($screen--medium) {
+            right: 1.5rem;
+            left: 1.5rem;
+        }
+
+        @include mq($screen--medium) {
+            right: 2.25rem;
+            left: 2.25rem;
+        }
+    }
+
+    &__image {
+
+    }
+
+    &__name {
+
+    }
+
+    &__title {
+        margin-top: -8px;
+        margin-bottom: 12px;
+        font-style: italic;
+    }
+
+    &__bio {
+
+    }
+
+    &__bio-item {
+
+    }
+
+    @include mq($screen--small) {
+        height: 326px;
+    }
+
+    @include mq($screen--medium) {
+        height: 304px;
+        padding: 1.5rem;
+    }
+
+    @include mq($screen--large) {
+        height: 331px;
+        padding: 2.25rem;
+    }
+}
+
+.wedding-party__bridesmaids .person {
+    .person__name:after {
+        @include mq($screen--small) {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            border-right: 1px solid get-color(brown);
+        }
+    }
+
+    &.person--icon .person__name:after {
+        @include mq($screen--small) {
+            bottom: 18px + 15px;
+        }
+
+        @include mq($screen--medium) {
+            bottom: 27px + 15px;
+        }
+    }
+
+    &:first-child + .person .person__name:after {
+        @include mq($screen--small) {
+            top: 18px + 15px;
+        }
+
+        @include mq($screen--medium) {
+            top: 27px + 15px;
+        }
+    }
+
+    &:after {
+        @include mq($screen--small) {
+            right: 18px + 20px;
+        }
+
+        @include mq($screen--medium) {
+            right: 27px + 20px;
+        }
+    }
+}
+
+.wedding-party__groomsmen .person:after {
+    @include mq($screen--small) {
+        left: 18px + 20px;
+    }
+
+    @include mq($screen--medium) {
+        left: 27px + 20px;
+    }
+}
+
+.person--special {
+    .person__bio { text-align: justify; }
+
+    @include mq($screen--small) {
+        height: 542px;
+    }
+
+    @include mq(850px) {
+        height: 488px;
+    }
+
+    @include mq($screen--medium) {
+        height: 452px;
+    }
+
+    @include mq(1310px) {
+        height: 425px;
+    }
+}
+
+.person--icon {
+
+    @include mq($screen--small) {
+        &:before {
+            content: '';
+            position: absolute;
+            left: 100%;
+            top: 100%;
+            width: 40px;
+            height: 29px;
+            margin-top: -14px;
+            margin-left: -20px;
+            background: url('images/jolly-roger-small.png') center no-repeat;
+        }
+    }
+}
