@@ -477,7 +477,7 @@ h3 {
 }
 
 blockquote {
-  font-size: 1.688rem;
+  font-size: 1.5rem;
   font-weight: 700;
   font-style: italic;
 }
@@ -743,6 +743,7 @@ body {
 }
 .intro__banner {
   height: 11.391rem;
+  border: 5px solid #adadad;
   background: url("images/banner.jpg") 0 0 no-repeat;
   background-size: cover;
 }
@@ -792,6 +793,124 @@ body {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1;
+}
+
+.section--our-story p {
+  text-align: justify;
+}
+
+.image-container-01 {
+  text-align: center;
+}
+.image-container-01 img {
+  max-width: 205.032px;
+  margin-top: 12px;
+  margin-bottom: 18px;
+}
+.image-container-01 blockquote {
+  display: none;
+  text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .image-container-01 {
+    float: right;
+    max-width: 205.032px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+  }
+  .image-container-01 img {
+    max-width: 70%;
+  }
+  .image-container-01 blockquote {
+    display: block;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .image-container-01 {
+    max-width: 307.548px;
+  }
+  .image-container-01 img {
+    margin-bottom: 27px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .image-container-01 {
+    padding-bottom: 27px;
+    padding-left: 27px;
+  }
+}
+
+.image-container-02 {
+  text-align: center;
+}
+.image-container-02 img {
+  vertical-align: top;
+  max-width: 205.032px;
+  margin: 27px;
+}
+@media screen and (min-width: 768px) {
+  .image-container-02 {
+    float: left;
+    max-width: 205.032px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+  }
+  .image-container-02 img {
+    display: block;
+    max-width: 70%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .image-container-02 {
+    max-width: 307.548px;
+  }
+  .image-container-02 img {
+    margin-bottom: 27px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .image-container-02 {
+    padding-bottom: 27px;
+    padding-right: 27px;
+  }
+}
+
+.image-container-03 {
+  overflow: hidden;
+  text-align: center;
+}
+.image-container-03 .image--smudge {
+  vertical-align: top;
+  margin: 27px;
+  max-width: 205.032px;
+}
+.image-container-03 .image--tracks {
+  margin: 27px;
+  max-width: 205.032px;
+}
+@media screen and (min-width: 768px) {
+  .image-container-03 .image--smudge,
+  .image-container-03 .image--tracks {
+    max-width: 131px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .image-container-03 .image--smudge {
+    max-width: 205.032px;
+  }
+  .image-container-03 .image--tracks {
+    max-width: 307.548px;
+  }
+}
+
+.image {
+  border: 5px solid #adadad;
+}
+.image--cosmos, .image--kiss, .image--smudge {
+  transform: rotate(5deg);
+}
+.image--cosplay, .image--tracks {
+  transform: rotate(-5deg);
 }
 
 @media screen and (min-width: 768px) {
@@ -907,6 +1026,9 @@ body {
   }
 }
 
+.person--special .person__image {
+  border-color: #031033;
+}
 .person--special .person__bio {
   text-align: justify;
 }

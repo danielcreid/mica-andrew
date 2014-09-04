@@ -1,0 +1,133 @@
+.section--our-story {
+    p { text-align: justify; }
+
+    blockquote {
+        //display: none;
+
+        //@include mq($screen--small) {
+        //    display: block;
+        //    float: right;
+        //    clear: right;
+        //    margin-top: 12px;
+        //    margin-bottom: 12px;
+        //    margin-left: 27px;
+        //    max-width: 205.032px;
+        //}
+//
+        //@include mq($screen--medium) {
+        //    margin-bottom: 12px;
+        //    margin-left: 40.5px;
+        //    width: 307.548px;
+        //}
+    }
+}
+
+
+.image-container-01 {
+    text-align: center;
+
+    img {
+        max-width: 205.032px;
+        margin-top: 12px;
+        margin-bottom: 18px;
+    }
+
+    blockquote {
+        display: none;
+        text-align: left;
+    }
+
+    @include mq($screen--small) {
+        float: right;
+        max-width: 205.032px;
+        padding-bottom: 12px;
+        padding-left: 18px;
+
+        img { max-width: 70%; }
+
+        blockquote { display: block; }
+    }
+
+    @include mq($screen--medium) {
+        max-width: 307.548px;
+
+        img { margin-bottom: 27px; }
+    }
+
+    @include mq($screen--large) {
+        padding-bottom: 27px;
+        padding-left: 27px;
+    }
+}
+
+.image-container-02 {
+    text-align: center;
+
+    img {
+        vertical-align: top;
+        max-width: 205.032px;
+        margin: 27px;
+    }
+
+    @include mq($screen--small) {
+        float: left;
+        max-width: 205.032px;
+        padding-bottom: 12px;
+        padding-left: 18px;
+
+        img {
+            display: block;
+            max-width: 70%;
+        }
+    }
+
+    @include mq($screen--medium) {
+        max-width: 307.548px;
+
+        img { margin-bottom: 27px; }
+    }
+
+    @include mq($screen--large) {
+        padding-bottom: 27px;
+        padding-right: 27px;
+    }
+}
+
+.image-container-03 {
+    overflow: hidden;
+    text-align: center;
+
+    .image--smudge {
+        vertical-align: top;
+        margin: 27px;
+        max-width: 205.032px;
+    }
+
+    .image--tracks {
+        margin: 27px;
+        max-width: 205.032px;
+    }
+
+    @include mq($screen--small) {
+        .image--smudge,
+        .image--tracks { max-width: 131px; }
+    }
+
+    @include mq($screen--large) {
+        .image--smudge { max-width:  205.032px; }
+
+        .image--tracks { max-width: 307.548px; }
+    }
+}
+
+
+.image {
+    border: 5px solid get-color(gray);
+
+    &--cosmos,
+    &--kiss,
+    &--smudge { transform: rotate(5deg); }
+
+    &--cosplay,
+    &--tracks { transform: rotate(-5deg); }
+}

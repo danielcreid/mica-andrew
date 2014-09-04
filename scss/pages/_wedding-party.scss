@@ -131,6 +131,8 @@
 }
 
 .person--special {
+    .person__image { border-color: get-color(blue); }
+
     .person__bio { text-align: justify; }
 
     @include mq($screen--small) {
