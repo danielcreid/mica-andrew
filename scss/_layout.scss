@@ -85,7 +85,12 @@ body { padding: 0.444rem; }
 
         h2 {
             padding-bottom: 5px;
+            font-size: 1.5rem;
             line-height: 1;
+
+            @include mq(500px) {
+                font-size: 2.25rem;
+            }
         }
 
         @include mq(601px) {
