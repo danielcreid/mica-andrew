@@ -1,24 +1,18 @@
 .section--our-story {
-    p { text-align: justify; }
+    p {
+        margin: 18px 0;
+        text-align: justify;
+    }
 
-    blockquote {
-        //display: none;
+    .large-text {
+        font-size: 1.5rem;
+        display: block;
+        text-align: center;
+        margin: 18px 0;
 
-        //@include mq($screen--small) {
-        //    display: block;
-        //    float: right;
-        //    clear: right;
-        //    margin-top: 12px;
-        //    margin-bottom: 12px;
-        //    margin-left: 27px;
-        //    max-width: 205.032px;
-        //}
-//
-        //@include mq($screen--medium) {
-        //    margin-bottom: 12px;
-        //    margin-left: 40.5px;
-        //    width: 307.548px;
-        //}
+        @include mq($screen--small) {
+            text-align: justify;
+        }
     }
 }
 

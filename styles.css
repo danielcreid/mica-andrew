@@ -802,7 +802,19 @@ body {
 }
 
 .section--our-story p {
+  margin: 18px 0;
   text-align: justify;
+}
+.section--our-story .large-text {
+  font-size: 1.5rem;
+  display: block;
+  text-align: center;
+  margin: 18px 0;
+}
+@media screen and (min-width: 768px) {
+  .section--our-story .large-text {
+    text-align: justify;
+  }
 }
 
 .image-container-01 {
