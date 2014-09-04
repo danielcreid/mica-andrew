@@ -1,0 +1,90 @@
+// Any time you want blog, article, or "Overview" text styling, apply this class
+// to the wrapping container. Could use a better name.
+.format-text {
+    h1 {
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.335em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-top: 0.83em;
+        margin-bottom: 0.415em;
+    }
+
+    h3 {
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    h4 {
+        margin-top: 1.33em;
+        margin-bottom: 0.665em;
+    }
+
+    h5 {
+        font-size: 0.83em;
+        margin-top: 1.67em;
+        margin-bottom: 0.835em;
+    }
+
+    h6 {
+        font-size: 0.67em;
+        margin-top: 2.33em;
+        margin-bottom: 1.165em;
+    }
+
+    p { margin: 0.62em 0; }
+
+    ol,
+    ul {
+        margin: 0.62em 0;
+        padding-left: 1.5em;
+        line-height: $base-line-height;
+
+        li {
+            margin: 0.62em 0;
+
+            p { margin: 0; }
+        }
+
+        ol,
+        ul { margin: 0; }
+    }
+
+    ol { list-style-type: decimal; }
+
+    ul { list-style-type: disc; }
+}
+
+// List styles
+// - Standard bulleted and numbered lists
+// - Also has nicely aligned checkbox/radio button lists
+// - Supports nested lists
+.list {
+    margin-top: 0.62em;
+    margin-bottom: 0.62em;
+    padding-left: 1.5em;
+    line-height: $base-line-height;
+
+    .list__item {
+        margin-top: 0.62em;
+        margin-bottom: 0.62em;
+    }
+
+    &--decimal { list-style-type: decimal; }
+
+    &--bullet { list-style-type: disc; }
+
+    &--input {
+        .list__item { @extend %clearfix; }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            float: left;
+            margin-left: -1.5em;
+        }
+    }
+}

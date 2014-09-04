@@ -1,0 +1,102 @@
+@mixin clearfix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+// Easy media queries
+@mixin mq($value, $property: 'min-width', $media: 'screen') {
+    // Validates wether or not the value is an integer, if it is then it will
+    // evaluate if the integer has a unit.
+    @if unitless($value) {
+      @error "$value may not have a valid unit, was '#{$value}'.";
+    }
+
+
+    @if type-of($property) != string {
+        @error "$property must be a string, was '#{$property}'.";
+    }
+
+
+    $valid-properties: 'min-width', 'max-width', 'min-height', 'max-height';
+
+    @if not index($valid-properties, $property) {
+        @warn "'#{$property}' is not a valid $property. Valid properties include: #{inspect($valid-properties)}.";
+    }
+
+
+    @if type-of($media) != string {
+        @error "$media must be a string, was '#{$media}'.";
+    }
+
+
+    @media #{$media} and ($property: $value) {
+        @content;
+    }
+}
+
+@mixin createGallery($columns: 1, $gutter: false) {
+    $gutterParameterCount: length($gutter);
+
+    @include clearfix;
+
+    @if $gutter and ($gutterParameterCount == 1) {
+        margin: -($gutter / 2);
+
+        > li {
+            float: left;
+            width: (100% / $columns);
+            padding: ($gutter / 2);
+        }
+    }
+
+    @else if $gutter and ($gutterParameterCount > 1) {
+        $rowGutter: (nth($gutter, 1) / 2) + 0; // + 0 to allow math
+        $columnGutter: (nth($gutter, 2) / 2) + 0; // + 0 to allow math
+        margin: -#{$rowGutter} -#{$columnGutter}; // Interpolate to allow negative value
+
+        > li {
+            float: left;
+            width: (100% / $columns);
+            padding: $rowGutter $columnGutter;
+        }
+    }
+
+    @else {
+        > li {
+            float: left;
+            width: (100% / $columns);
+        }
+    }
+}
+
+@mixin updateGallery($columns: false, $gutter: false) {
+    $gutterParameterCount: length($gutter);
+
+    @if $gutter and ($gutterParameterCount == 1) {
+        margin: -($gutter / 2);
+
+        > li {
+            @if $columns { width: (100% / $columns); }
+            padding: ($gutter / 2);
+        }
+    }
+
+    @else if $gutter and ($gutterParameterCount > 1) {
+        $rowGutter: (nth($gutter, 1) / 2) + 0; // + 0 to allow math
+        $columnGutter: (nth($gutter, 2) / 2) + 0; // + 0 to allow math
+
+        margin: -#{$rowGutter} -#{$columnGutter}; // Interpolate to allow negative value
+
+        > li {
+            @if $columns { width: (100% / $columns); }
+            padding: $rowGutter $columnGutter;
+        }
+    }
+
+    @else {
+        > li { width: (100% / $columns); }
+    }
+}

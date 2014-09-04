@@ -1,0 +1,79 @@
+// Test if map got all `$keys` at root level
+// ---
+// @param [map] $map: map
+// @param [argList] $keys: keys to test
+// ---
+// @return [bool]
+// ---
+
+@function map-has-keys($map, $keys...) {
+    @each $key in $keys {
+        @if not map-has-key($map, $key) {
+            @return false;
+        }
+    }
+
+    @return true;
+}
+
+
+// Test if map got all `$keys` nested with each others
+// ---
+// @param [map] $map: map
+// @param [argList] $keys: keys to test
+// ---
+// @return [bool]
+// ---
+@function map-has-nested-keys($map, $keys...) {
+    @each $key in $keys {
+        @if not map-has-key($map, $key) {
+            @return false;
+        }
+
+        $map: map-get($map, $key);
+    }
+
+    @return true;
+}
+
+
+// Fetch nested keys
+// ---
+// @param [map] $map: map
+// @param [argList] $keys: keys to fetch
+// ---
+// @return [literal]
+// ---
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+
+    @return $map;
+}
+
+// Strips units from a number
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+ }
+
+// Add percentage of white to a color
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
+
+// Get the value of a color defined in our global color map
+@function get-color($color, $tone: 'base') {
+    @if map-get($color-map, $color) {
+        @if map-deep-get($color-map, $color, $tone) {
+            @return map-deep-get($color-map, $color, $tone);
+        }
+        @error "The tone '#{$tone}' is not defined for the color '#{$color}', which is located inside of $color-map.";
+    }
+    @error "The color '#{$color}' is not defined in $color-map.";
+}

@@ -1,0 +1,148 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Colors
+//
+////////////////////////////////////////////////////////////////////////////////
+
+$base-color--gray:  #adadad !default;
+$base-color--blue:  #031033 !default;
+$base-color--coral: #ff614d !default;
+$base-color--brown: #ad8f6d !default;
+$base-color--tan:   #d3b27f !default;
+$base-color--cream: #f8ecc2 !default;
+
+$color-map: (
+  gray: (
+    base     :       $base-color--gray,
+    light    :  tint($base-color--gray, 50%),
+    lighter  :  tint($base-color--gray, 75%),
+    lightest :  tint($base-color--gray, 87%),
+    dark     : shade($base-color--gray, 20%),
+    darker   : shade($base-color--gray, 45%),
+    darkest  : shade($base-color--gray, 65%)
+  ),
+  blue: (
+    base     :       $base-color--blue,
+    light    :  tint($base-color--blue, 20%),
+    lighter  :  tint($base-color--blue, 40%),
+    lightest :  tint($base-color--blue, 60%),
+    dark     : shade($base-color--blue, 20%),
+    darker   : shade($base-color--blue, 40%),
+    darkest  : shade($base-color--blue, 60%)
+  ),
+  coral: (
+    base     :       $base-color--coral,
+    light    :  tint($base-color--coral, 20%),
+    lighter  :  tint($base-color--coral, 40%),
+    lightest :  tint($base-color--coral, 60%),
+    dark     : shade($base-color--coral, 20%),
+    darker   : shade($base-color--coral, 40%),
+    darkest  : shade($base-color--coral, 60%)
+  ),
+  brown: (
+    base     :       $base-color--brown,
+    light    :  tint($base-color--brown, 20%),
+    lighter  :  tint($base-color--brown, 40%),
+    lightest :  tint($base-color--brown, 60%),
+    dark     : shade($base-color--brown, 20%),
+    darker   : shade($base-color--brown, 40%),
+    darkest  : shade($base-color--brown, 60%)
+  ),
+  tan: (
+    base     :       $base-color--tan,
+    light    :  tint($base-color--tan, 20%),
+    lighter  :  tint($base-color--tan, 40%),
+    lightest :  tint($base-color--tan, 60%),
+    dark     : shade($base-color--tan, 20%),
+    darker   : shade($base-color--tan, 40%),
+    darkest  : shade($base-color--tan, 60%)
+  ),
+  cream: (
+    base     :       $base-color--cream,
+    light    :  tint($base-color--cream, 20%),
+    lighter  :  tint($base-color--cream, 40%),
+    lightest :  tint($base-color--cream, 60%),
+    dark     : shade($base-color--cream, 20%),
+    darker   : shade($base-color--cream, 40%),
+    darkest  : shade($base-color--cream, 60%)
+  ),
+  white: ( base: #fff ),
+  black: ( base: #000 )
+) !default;
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Base Variables
+//
+////////////////////////////////////////////////////////////////////////////////
+
+$screen--small: 768px;
+$screen--medium: 1024px;
+$screen--large: 1280px;
+
+$gutter--small: 1rem;
+$gutter--medium: 1.5rem;
+$gutter--large: 2.25rem;
+
+$base-font-family: 'Crimson Text', serif;
+$base-font-weight: 400;
+$base-font-style: normal;
+$base-font-size: 112.5%;
+$base-line-height: 1.5;
+
+$base-text-color: $base-color--blue;
+$base-link-color: $base-color--coral;
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Modular scale variables
+//
+////////////////////////////////////////////////////////////////////////////////
+
+// Gets values in a modular scale
+// This would be more useful if it just spit out Em/Rem values
+//@function get-scale($factor, $base-size: 16, $ratio: 1.5) {
+//    @if $factor != 0 and $factor != null and $factor != '' {
+//        @if unitless($factor) {
+//            @if $factor < 0 {
+//                @for $i from 0 to $factor {
+//                    $base-size: ($base-size / $ratio);
+//                }
+//
+//                @return $base-size;
+//            } @else {
+//                @for $i from 0 to $factor {
+//                    $base-size: ($base-size * $ratio);
+//                }
+//
+//                @return $base-size;
+//            }
+//        } @else {
+//            $factor-unit: unit($factor);
+//
+//            @if strip-units($factor) < 0 {
+//                @for $i from 0 to strip-units($factor) {
+//                    $base-size: ($base-size / $ratio);
+//                }
+//
+//                @return #{$base-size + $factor-unit};
+//            } @else {
+//                @for $i from 0 to strip-units($factor) {
+//                    $base-size: ($base-size * $ratio);
+//                }
+//
+//                @return #{$base-size + $factor-unit};
+//            }
+//        }
+//    } @else {
+//        @return $base-size;
+//    }
+//}

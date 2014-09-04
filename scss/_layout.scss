@@ -1,0 +1,148 @@
+$nav-width: 11.391rem;
+
+// Body border
+html:before,
+html:after,
+body:before,
+body:after {
+    position: fixed;
+    z-index: 1;
+    content: '';
+    background-color: get-color(brown);
+}
+
+html:before,
+body:before {
+    right: 0;
+    left: 0;
+    height: 0.444rem;
+}
+
+html:after,
+body:after {
+    top: 0;
+    bottom: 0;
+    width: 0.444rem;
+}
+
+html:before { top: 0; }
+html:after { right: 0; }
+body:before { bottom: 0; }
+body:after { left: 0; }
+
+body { padding: 0.444rem; }
+
+.main-wrap {
+    margin: 0.444rem auto;
+    padding: 0 0.444rem;
+
+    @include mq($screen--medium) {
+        max-width: $screen--medium;
+    }
+
+    @include mq($screen--large) {
+        max-width: $screen--large;
+    }
+}
+
+.nav {
+    margin-bottom: 1rem;
+    text-align:  center;
+
+    a {
+        display: block;
+        padding: 5px;
+        color: get-color(blue);
+        font-weight: 700;
+    }
+
+    @include mq($screen--small) {
+        position: fixed;
+        top: 0.444rem * 2;
+        width: $nav-width;
+        text-align: center;
+    }
+
+    @include mq($screen--medium) {
+        top:  0.444rem * 2 + $gutter--medium;
+    }
+
+    @include mq($screen--large) {
+        top:  0.444rem * 2 + $gutter--large;
+    }
+}
+
+.section {
+    padding-bottom: 5.063rem;
+
+    &__header {
+        position: relative;
+        margin-bottom: $gutter--small;
+        padding: 0.667rem 48px;
+        border-top: 1px solid get-color(brown);
+        border-bottom: 1px solid get-color(brown);
+        text-align: center;
+
+        h2 {
+            padding-bottom: 5px;
+            line-height: 1;
+        }
+
+        @include mq(601px) {
+            padding-right: 64px;
+            padding-left: 64px;
+        }
+
+        @include mq($screen--medium) {
+            margin-bottom: $gutter--medium;
+        }
+
+        @include mq($screen--large) {
+            margin-bottom: $gutter--large;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            height: 40px;
+            width: 38px;
+            margin-top: -20px;
+            background: url('images/compass-small.png') center no-repeat;
+        }
+
+        &:before { left: 0.667rem; }
+        &:after { right: 0.667rem; }
+    }
+
+    &__amp {
+        display: block;
+        font-size: 1.5rem;
+
+        @include mq(601px) {
+            display: inline;
+        }
+    }
+
+    @include mq($screen--small) {
+        margin-left: $nav-width + $gutter--small;
+    }
+
+    @include mq($screen--medium) {
+        margin-left: $nav-width + $gutter--medium;
+
+        &.intro {
+            padding-top: $gutter--medium;
+            padding-bottom: 0;
+        }
+        &.rsvp { padding-bottom: $gutter--medium; }
+    }
+
+    @include mq($screen--large) {
+        margin-left: $nav-width + $gutter--large;
+
+        &.intro { padding-top: $gutter--large; }
+        &.rsvp { padding-bottom: $gutter--large; }
+    }
+}
