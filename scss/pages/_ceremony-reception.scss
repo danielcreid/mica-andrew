@@ -1,0 +1,13 @@
+.ceremony-reception {
+    @include mq($screen--small) {
+        margin-top: 326px;
+    }
+
+    @include mq($screen--medium) {
+        margin-top: 304px;
+    }
+
+    @include mq($screen--large) {
+        margin-top: 331px;
+    }
+}

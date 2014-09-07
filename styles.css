@@ -948,6 +948,9 @@ body {
   transform: rotate(-5deg);
 }
 
+.wedding-party {
+  position: relative;
+}
 @media screen and (min-width: 768px) {
   .wedding-party__bridesmaids {
     float: left;
@@ -1049,6 +1052,9 @@ body {
     right: 47px;
   }
 }
+.wedding-party__bridesmaids .person.person--flower-girl .person__name:after {
+  display: none;
+}
 
 @media screen and (min-width: 768px) {
   .wedding-party__groomsmen .person:after {
@@ -1099,6 +1105,35 @@ body {
     margin-top: -14px;
     margin-left: -20px;
     background: url("images/jolly-roger-small.png") center no-repeat;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .person--flower-girl {
+    position: absolute;
+    width: 100%;
+    padding-top: 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .person--flower-girl {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ceremony-reception {
+    margin-top: 326px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .ceremony-reception {
+    margin-top: 304px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .ceremony-reception {
+    margin-top: 331px;
   }
 }
 
