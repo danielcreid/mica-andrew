@@ -1,5 +1,6 @@
 .wedding-party {
     @extend %clearfix;
+    position: relative;
 
     &__bridesmaids {
         @include mq($screen--small) {
@@ -40,26 +41,10 @@
         }
     }
 
-    &__image {
-
-    }
-
-    &__name {
-
-    }
-
     &__title {
         margin-top: -8px;
         margin-bottom: 12px;
         font-style: italic;
-    }
-
-    &__bio {
-
-    }
-
-    &__bio-item {
-
     }
 
     @include mq($screen--small) {
@@ -118,6 +103,10 @@
             right: 27px + 20px;
         }
     }
+
+    &.person--flower-girl .person__name:after {
+        display: none;
+    }
 }
 
 .wedding-party__groomsmen .person:after {
@@ -153,7 +142,6 @@
 }
 
 .person--icon {
-
     @include mq($screen--small) {
         &:before {
             content: '';
@@ -166,5 +154,17 @@
             margin-left: -20px;
             background: url('images/jolly-roger-small.png') center no-repeat;
         }
+    }
+}
+
+.person--flower-girl {
+    @include mq($screen--small) {
+        position: absolute;
+        width: 100%;
+        padding-top: 2.25rem;
+    }
+
+    @include mq($screen--large) {
+        padding-top: 3rem;
     }
 }
