@@ -161,10 +161,15 @@
     @include mq($screen--small) {
         position: absolute;
         width: 100%;
-        padding-top: 2.25rem;
+        margin-top: 2.25rem;
+        padding-top: 0;
+        padding-right: 0;
+        padding-left: 0;
+
+        &:after { border-bottom: 0; }
     }
 
     @include mq($screen--large) {
-        padding-top: 3rem;
+        margin-top: 3rem;
     }
 }
