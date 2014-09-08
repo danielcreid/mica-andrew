@@ -1112,12 +1112,18 @@ body {
   .person--flower-girl {
     position: absolute;
     width: 100%;
-    padding-top: 2.25rem;
+    margin-top: 2.25rem;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .person--flower-girl:after {
+    border-bottom: 0;
   }
 }
 @media screen and (min-width: 1280px) {
   .person--flower-girl {
-    padding-top: 3rem;
+    margin-top: 3rem;
   }
 }
 
