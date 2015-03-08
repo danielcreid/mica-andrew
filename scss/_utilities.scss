@@ -88,3 +88,37 @@
         }
     }
 }
+
+
+// Wells
+
+.well {
+    position: relative;
+    padding: 1rem;
+    background-color: get-color(gray, lightest);
+    border-left: 5px solid get-color(gray, light);
+    border-radius: 4px;
+
+    @include clearfix;
+}
+
+.well--info {
+    background-color: get-color(tan, lightest);
+    border-color: get-color(tan, light);
+    color: get-color(tan, darkest);
+}
+
+.well--alert {
+    padding-left: calc(1rem + 48px + 1rem);
+    background-color: get-color(coral, lightest);
+    border-color: get-color(coral, light);
+    color: get-color(coral, darkest);
+
+    &:before {
+        content: url('images/jolly-roger-alert.png');
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+    }
+}

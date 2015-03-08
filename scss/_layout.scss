@@ -33,8 +33,8 @@ body:after { left: 0; }
 body { padding: 0.444rem; }
 
 .main-wrap {
-    margin: 0.444rem auto;
-    padding: 0 0.444rem;
+    margin: 0.444rem 0;
+    padding: 0 0.444rem 0.888rem 0.444rem;
 
     @include mq($screen--medium) {
         max-width: $screen--medium;
@@ -59,21 +59,26 @@ body { padding: 0.444rem; }
     @include mq($screen--small) {
         position: fixed;
         top: 0.444rem * 2;
+        left: ($gutter--small + 0.444rem);
         width: $nav-width;
         text-align: center;
     }
 
     @include mq($screen--medium) {
         top:  0.444rem * 2 + $gutter--medium;
+        left: ($gutter--medium + 0.444rem);
     }
 
     @include mq($screen--large) {
         top:  0.444rem * 2 + $gutter--large;
+        left: ($gutter--large + 0.444rem);
     }
 }
 
 .section {
     padding-bottom: 5.063rem;
+
+    @include clearfix;
 
     &__header {
         position: relative;
@@ -114,11 +119,25 @@ body { padding: 0.444rem; }
             height: 40px;
             width: 38px;
             margin-top: -20px;
-            background: url('images/compass-small.png') center no-repeat;
+            background: url('images/fleur-de-lis.png') center no-repeat;
         }
 
         &:before { left: 0.667rem; }
         &:after { right: 0.667rem; }
+    }
+
+    &__content + &__content { margin-top: 1rem; }
+
+    &__meta {
+        margin: 1.5rem 0;
+        @include clearfix;
+
+        ul + ul { margin-top: 1rem; }
+    }
+
+    &__meta-image {
+        margin: 3rem 0 2rem 0;
+        text-align: center;
     }
 
     &__amp {
@@ -130,24 +149,73 @@ body { padding: 0.444rem; }
         }
     }
 
+    @include mq(515px) {
+        &__meta ul {
+            float: left;
+            width: 50%;
+
+            &:nth-child(even) { padding-left: 0.5rem; }
+            &:nth-child(odd) { padding-right: 0.5rem; }
+
+            + ul { margin-top: 0; }
+        }
+    }
+
     @include mq($screen--small) {
-        margin-left: $nav-width + $gutter--small;
+        margin-left: $gutter--small + $nav-width + $gutter--small;
     }
 
     @include mq($screen--medium) {
-        margin-left: $nav-width + $gutter--medium;
+        margin-left: $gutter--medium + $nav-width + $gutter--medium;
 
         &.intro {
             padding-top: $gutter--medium;
             padding-bottom: 0;
         }
+
         &.rsvp { padding-bottom: $gutter--medium; }
+
+        &__content {
+            float: left;
+            width: 50%;
+
+            &:nth-child(even) { padding-right: ($gutter--medium / 2); }
+            &:nth-child(odd) { padding-left: ($gutter--medium / 2); }
+
+            + .section__content { margin-top: 0; }
+        }
+
+        &__meta ul {
+            float: none;
+            width: auto;
+
+            &:nth-child(even) { padding-left: 0; }
+            &:nth-child(odd) { padding-right: 0; }
+
+            + ul { margin-top: 1rem; }
+        }
     }
 
     @include mq($screen--large) {
-        margin-left: $nav-width + $gutter--large;
+        margin-left: $gutter--large + $nav-width + $gutter--large;
 
         &.intro { padding-top: $gutter--large; }
+
         &.rsvp { padding-bottom: $gutter--large; }
+
+        &__content {
+            &:nth-child(even) { padding-right: ($gutter--large / 2); }
+            &:nth-child(odd) { padding-left: ($gutter--large / 2); }
+        }
+
+        &__meta ul {
+            float: left;
+            width: 50%;
+
+            &:nth-child(even) { padding-left: 0.5rem; }
+            &:nth-child(odd) { padding-right: 0.5rem; }
+
+            + ul { margin-top: 0; }
+        }
     }
 }
