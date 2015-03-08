@@ -482,6 +482,21 @@ blockquote {
   font-style: italic;
 }
 
+li > .fa {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 5px;
+  vertical-align: sub;
+  color: #544732;
+}
+li > .fa:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
 .coming-soon {
   padding: 1rem;
   background-color: #d3b27f;
@@ -572,6 +587,39 @@ blockquote {
   margin-left: -1.5em;
 }
 
+.well {
+  position: relative;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border-left: 5px solid #d6d6d6;
+  border-radius: 4px;
+}
+.well:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.well--info {
+  background-color: #ede0cb;
+  border-color: #dbc198;
+  color: #544732;
+}
+
+.well--alert {
+  padding-left: calc(1rem + 48px + 1rem);
+  background-color: #ffbfb7;
+  border-color: #ff8070;
+  color: #66261e;
+}
+.well--alert:before {
+  content: url("images/jolly-roger-alert.png");
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
 html:before,
 html:after,
 body:before,
@@ -617,8 +665,8 @@ body {
 }
 
 .main-wrap {
-  margin: 0.444rem auto;
-  padding: 0 0.444rem;
+  margin: 0.444rem 0;
+  padding: 0 0.444rem 0.888rem 0.444rem;
 }
 @media screen and (min-width: 1024px) {
   .main-wrap {
@@ -645,6 +693,7 @@ body {
   .nav {
     position: fixed;
     top: 0.888rem;
+    left: 1.444rem;
     width: 11.391rem;
     text-align: center;
   }
@@ -652,16 +701,23 @@ body {
 @media screen and (min-width: 1024px) {
   .nav {
     top: 2.388rem;
+    left: 1.944rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .nav {
     top: 3.138rem;
+    left: 2.694rem;
   }
 }
 
 .section {
   padding-bottom: 5.063rem;
+}
+.section:after {
+  content: '';
+  display: table;
+  clear: both;
 }
 .section__header {
   position: relative;
@@ -704,13 +760,31 @@ body {
   height: 40px;
   width: 38px;
   margin-top: -20px;
-  background: url("images/compass-small.png") center no-repeat;
+  background: url("images/fleur-de-lis.png") center no-repeat;
 }
 .section__header:before {
   left: 0.667rem;
 }
 .section__header:after {
   right: 0.667rem;
+}
+.section__content + .section__content {
+  margin-top: 1rem;
+}
+.section__meta {
+  margin: 1.5rem 0;
+}
+.section__meta:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.section__meta ul + ul {
+  margin-top: 1rem;
+}
+.section__meta-image {
+  margin: 3rem 0 2rem 0;
+  text-align: center;
 }
 .section__amp {
   display: block;
@@ -721,14 +795,29 @@ body {
     display: inline;
   }
 }
+@media screen and (min-width: 515px) {
+  .section__meta ul {
+    float: left;
+    width: 50%;
+  }
+  .section__meta ul:nth-child(even) {
+    padding-left: 0.5rem;
+  }
+  .section__meta ul:nth-child(odd) {
+    padding-right: 0.5rem;
+  }
+  .section__meta ul + ul {
+    margin-top: 0;
+  }
+}
 @media screen and (min-width: 768px) {
   .section {
-    margin-left: 12.391rem;
+    margin-left: 13.391rem;
   }
 }
 @media screen and (min-width: 1024px) {
   .section {
-    margin-left: 12.891rem;
+    margin-left: 14.391rem;
   }
   .section.intro {
     padding-top: 1.5rem;
@@ -737,16 +826,61 @@ body {
   .section.rsvp {
     padding-bottom: 1.5rem;
   }
+  .section__content {
+    float: left;
+    width: 50%;
+  }
+  .section__content:nth-child(even) {
+    padding-right: 0.75rem;
+  }
+  .section__content:nth-child(odd) {
+    padding-left: 0.75rem;
+  }
+  .section__content + .section__content {
+    margin-top: 0;
+  }
+  .section__meta ul {
+    float: none;
+    width: auto;
+  }
+  .section__meta ul:nth-child(even) {
+    padding-left: 0;
+  }
+  .section__meta ul:nth-child(odd) {
+    padding-right: 0;
+  }
+  .section__meta ul + ul {
+    margin-top: 1rem;
+  }
 }
 @media screen and (min-width: 1280px) {
   .section {
-    margin-left: 13.641rem;
+    margin-left: 15.891rem;
   }
   .section.intro {
     padding-top: 2.25rem;
   }
   .section.rsvp {
     padding-bottom: 2.25rem;
+  }
+  .section__content:nth-child(even) {
+    padding-right: 1.125rem;
+  }
+  .section__content:nth-child(odd) {
+    padding-left: 1.125rem;
+  }
+  .section__meta ul {
+    float: left;
+    width: 50%;
+  }
+  .section__meta ul:nth-child(even) {
+    padding-left: 0.5rem;
+  }
+  .section__meta ul:nth-child(odd) {
+    padding-right: 0.5rem;
+  }
+  .section__meta ul + ul {
+    margin-top: 0;
   }
 }
 
@@ -1127,6 +1261,31 @@ body {
   }
 }
 
+.ceremony-reception .image--cool-springs-house {
+  transform: rotate(3deg);
+}
+.ceremony-reception .well + .well {
+  margin-top: 1rem;
+}
+.ceremony-reception__direction-list {
+  padding-left: 1rem;
+  line-height: 1.3;
+}
+.ceremony-reception__direction-list li {
+  position: relative;
+  margin: 0.75em 0;
+}
+.ceremony-reception__direction-list li:before {
+  content: '\2022';
+  position: absolute;
+  left: -1rem;
+  color: #d3b27f;
+}
+.ceremony-reception__direction-list-icon {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
 @media screen and (min-width: 768px) {
   .ceremony-reception {
     margin-top: 326px;
