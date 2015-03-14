@@ -1,1 +1,25 @@
-.registry { text-align: center; }
+.registry {
+    text-align: center;
+
+    a {
+        display: block;
+        padding: 1rem;
+        background-color: get-color(cream, light);
+        border-radius: 4px;
+        transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+        span {
+            display: block;
+            color: $base-link-color;
+            line-height: $base-line-height;
+            transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        &:hover {
+            background-color: get-color(cream, lightest);
+            text-decoration: none;
+
+            span { color: darken($base-link-color, 25%); }
+        }
+    }
+}
