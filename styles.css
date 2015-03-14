@@ -1305,5 +1305,25 @@ body {
 .registry {
   text-align: center;
 }
+.registry a {
+  display: block;
+  padding: 1rem;
+  background-color: #f9efce;
+  border-radius: 4px;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.registry a span {
+  display: block;
+  color: #ff614d;
+  line-height: 1.5;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.registry a:hover {
+  background-color: #fcf7e6;
+  text-decoration: none;
+}
+.registry a:hover span {
+  color: #cc1700;
+}
 
 /*# sourceMappingURL=styles.css.map */
