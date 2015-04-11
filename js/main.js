@@ -16,3 +16,63 @@ $(function () {
         }
     })
 });
+
+(function() {
+    'use strict';
+
+    function clickInsideElement(e, className) {
+        var el = e.target;
+
+        if (el.classList.contains(className)) {
+            return el;
+        } else {
+            while (el = el.parentNode) {
+                if (el.classList && el.classList.contains(className)) {
+                    return el;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    var rsvpForm = document.querySelector('.js-rsvp-form');
+    var attendingRadioButtonClass = 'js-attending-radio';
+    var attendingRadioButtons = document.querySelectorAll('.js-attending-radio');
+    var numberAttendingRow = document.querySelector('.js-number-attending-row');
+    var numberAttendingInput = document.querySelector('.js-number-attending-input');
+    var isAttendingClass = 'is-attending';
+    var isHiddenClass = 'is-hidden';
+    var radioButtonInContext;
+
+    function init() {
+        resetForm();
+        radioButtonListener();
+    }
+
+    function radioButtonListener() {
+        document.addEventListener('click', function(e) {
+            radioButtonInContext = clickInsideElement(e, attendingRadioButtonClass);
+
+            if (radioButtonInContext) {
+                if (radioButtonInContext.classList.contains(isAttendingClass)) {
+                    numberAttendingRow.classList.remove('is-hidden');
+                    numberAttendingInput.removeAttribute('disabled');
+                } else {
+                    numberAttendingRow.classList.add('is-hidden');
+                    numberAttendingInput.setAttribute('disabled', '');
+                }
+            } else {
+                radioButtonInContext = null;
+            }
+        });
+    }
+
+    function resetForm() {
+        rsvpForm.reset();
+        numberAttendingRow.classList.remove('is-hidden');
+        numberAttendingInput.removeAttribute('disabled');
+    }
+
+    init();
+})();

@@ -1,0 +1,13 @@
+.rsvp {
+    label { display: block; }
+
+    [type='text'],
+    [type='tel'],
+    [type='number'],
+    [type='email'],
+    textarea { width: 100%; }
+
+    textarea { max-width: 100%; }
+}
+
+.is-hidden { display: none; }
