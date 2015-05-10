@@ -36,6 +36,12 @@ $(function () {
         return false;
     }
 
+    function setAttributes(el, attrs) {
+        for(var key in attrs) {
+            el.setAttribute(key, attrs[key]);
+        }
+    }
+
     var rsvpForm = document.querySelector('.js-rsvp-form');
     var rsvpMessageYes = document.querySelector('.js-rsvp-message-yes');
     var rsvpMessageNo = document.querySelector('.js-rsvp-message-no');
@@ -47,6 +53,14 @@ $(function () {
     var isAttendingClass = 'is-attending';
     var isHiddenClass = 'is-hidden';
     var radioButtonInContext;
+    var formAction = '//formspree.io/' + Base64.decode('bW1iaWxicmV5MjFAZ21haWwuY29t');
+    var nextElement = document.createElement('input');
+
+    setAttributes(nextElement, {
+        'type': 'hidden',
+        'name': '_next',
+        'value': 'thanks.html'
+    });
 
     function init() {
         resetForm();
@@ -101,54 +115,27 @@ $(function () {
                 return obj;
             }, {});
 
-            //$.ajaxTransport("+*", function( options, originalOptions, jqXHR ) {
-            //    if(window.XDomainRequest) {
-            //        var xdr;
-//
-            //        return {
-            //            send: function( headers, completeCallback ) {
-            //                // Use Microsoft XDR
-            //                xdr = new XDomainRequest();
-            //                xdr.open("get", options.url);
-//
-            //                xdr.onload = function() {
-            //                    if (this.contentType.match(/\/xml/)) {
-            //                        var dom = new ActiveXObject("Microsoft.XMLDOM");
-            //                        dom.async = false;
-            //                        dom.loadXML(this.responseText);
-            //                        completeCallback(200, "success", [dom]);
-            //                    } else {
-            //                        completeCallback(200, "success", [this.responseText]);
-            //                    }
-//
-            //                };
-//
-            //                xdr.ontimeout = function() {
-            //                    completeCallback(408, "error", ["The request timed out."]);
-            //                };
-//
-            //                xdr.onerror = function() {
-            //                    completeCallback(404, "error", ["The requested resource could not be found."]);
-            //                };
-//
-            //                xdr.send();
-            //          },
-            //          abort: function() {
-            //              if(xdr)xdr.abort();
-            //          }
-            //        };
-            //    }
-            //});
+            // Support for lte IE9 (also fires for IE10, which is unnecessary. Whatever...)
+            if(window.XDomainRequest) {
+                setAttributes(rsvpForm, {
+                    'action': formAction,
+                    'method': 'post'
+                });
 
-            $.ajax({
-                url: '//formspree.io/' + Base64.decode('ZGFuaWVsYy5yZWlkQGdtYWlsLmNvbQ=='),
-                method: 'POST',
-                data: $data,
-                dataType: 'json',
-                cache: false,
-                crossDomain: true,
-                success: showRSVPMessage($data['Attending?'], $data['First name'])
-            });
+                rsvpForm.appendChild(nextElement);
+
+                rsvpForm.submit();
+            } else {
+                $.ajax({
+                    url: formAction,
+                    method: 'post',
+                    data: $data,
+                    dataType: 'json',
+                    cache: false,
+                    crossDomain: true,
+                    success: showRSVPMessage($data['Attending?'], $data['First name'])
+                });
+            }
         });
     }
 

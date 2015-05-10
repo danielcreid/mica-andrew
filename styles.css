@@ -1553,4 +1553,13 @@ body {
   display: none;
 }
 
+.rsvp--generic {
+  padding: calc(0.444rem + 18px);
+}
+.rsvp--generic .rsvp-message {
+  display: block;
+  max-width: 550px;
+  margin: auto;
+}
+
 /*# sourceMappingURL=styles.css.map */
