@@ -108,6 +108,12 @@
     color: get-color(tan, darkest);
 }
 
+.well--awesome {
+    background-color: get-color(blue, lightest);
+    border-color: get-color(blue, light);
+    color: get-color(blue, darkest);
+}
+
 .well--alert {
     padding-left: calc(1rem + 48px + 1rem);
     background-color: get-color(coral, lightest);

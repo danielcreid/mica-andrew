@@ -282,8 +282,9 @@
             <div class="section__header">
                 <h2>RSVP</h2>
             </div>
-            <div>
-                <form class="u-grid js-rsvp-form" method="POST" action="//formspree.io/danielc.reid@gmail.com">
+            <h3>To RSVP, please fill out the form below or call Mica at (931) 319-1066.</h3>
+            <div class="section__content">
+                <form class="u-grid js-rsvp-form">
                     <div class="u-grid__row">
                         <div class="u-grid__col u-grid__col--6">
                             <label>First name</label>
@@ -303,7 +304,6 @@
                             </fieldset>
                         </div>
                     </div>
-
                     <div class="u-grid__row js-number-attending-row">
                         <div class="u-grid__col u-grid__col--12">
                             <label>Number attending</label>
@@ -317,19 +317,36 @@
                         </div>
                     </div>
                     <div class="u-grid__row">
-                        <div class="u-grid__col u-grid__col--12">
-                            <input type="submit" value="Send">
+                        <div class="u-grid__col u-grid__col--6">
+                            <input class="js-submit-button" type="submit" value="Send RSVP!">
                         </div>
                     </div>
-                    <input type="text" name="_gotcha" style="display:none" />
+                    <input type="text" name="_gotcha" style="display: none" />
                     <input type="hidden" name="_subject" value="Wedding RSVP" />
-                    <input type="hidden" name="_next" value="thanks.html" />
                 </form>
+                <div class="rsvp-message js-rsvp-message-yes">
+                    <img src="images/jolly-roger-alert.png">
+                    <h3>Can't wait to see you, <span class="js-user-first-name"></span>!</h3>
+                    <p>If you have any questions, please call Mica at <span class="phone">(931) 319-1066</span>.</p>
+                    <a href="#accommodations">Still need a place to stay?</a>
+                </div>
+                <div class="rsvp-message js-rsvp-message-no">
+                    <img src="images/jolly-roger-alert.png">
+                    <h3>Sorry you can't make it, <span class="js-user-first-name"></span>.</h3>
+                    <p>We're going to miss you, but thanks for letting us know!</p>
+                </div>
+            </div>
+            <div class="section__content">
+                <div class="well well--info">
+                    <p>Help us capture every moment with the <a href="https://www.weddingpartyapp.com/guests">Wedding Party App</a>. Be sure to use our wedding key, <strong>[WEDDING KEY HERE]</strong>. We really appreciate it and hope to see you at the wedding!</p>
+                    <a class="app-store" href="https://itunes.apple.com/us/app/wedding-party-getting-married/id494214305?mt=8"><img src="images/app-store.png"></a>
+                    <a class="app-store" href="https://play.google.com/store/apps/details?id=com.micromobs.pkk&hl=en"><img src="images/google-play.png"></a>
+                </div>
             </div>
         </section>
     </div>
 
-    <!--<script src="scripts.js"></script>-->
-    <script src="scripts.min.js"></script>
+    <script src="scripts.js"></script>
+    <!--<script src="scripts.min.js"></script>-->
 </body>
 </html>

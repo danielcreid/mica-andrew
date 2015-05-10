@@ -37,6 +37,9 @@ $(function () {
     }
 
     var rsvpForm = document.querySelector('.js-rsvp-form');
+    var rsvpMessageYes = document.querySelector('.js-rsvp-message-yes');
+    var rsvpMessageNo = document.querySelector('.js-rsvp-message-no');
+    var userFirstName = document.querySelectorAll('.js-user-first-name');
     var attendingRadioButtonClass = 'js-attending-radio';
     var attendingRadioButtons = document.querySelectorAll('.js-attending-radio');
     var numberAttendingRow = document.querySelector('.js-number-attending-row');
@@ -48,6 +51,7 @@ $(function () {
     function init() {
         resetForm();
         radioButtonListener();
+        submitFormListener();
     }
 
     function radioButtonListener() {
@@ -72,6 +76,80 @@ $(function () {
         rsvpForm.reset();
         numberAttendingRow.classList.remove('is-hidden');
         numberAttendingInput.removeAttribute('disabled');
+    }
+
+    function showRSVPMessage(isAttending, firstName) {
+        for (var i = 0; i < userFirstName.length; i++) {
+            userFirstName[i].innerHTML = firstName;
+        }
+
+        rsvpForm.style.display = 'none';
+
+        if (isAttending == 'I\'ll be there!') {
+            rsvpMessageYes.style.display = 'block';
+        } else {
+            rsvpMessageNo.style.display = 'block';
+        }
+    }
+
+    function submitFormListener() {
+        rsvpForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var $data = $(this).serializeArray().reduce(function(obj, item) {
+                obj[item.name] = item.value;
+                return obj;
+            }, {});
+
+            //$.ajaxTransport("+*", function( options, originalOptions, jqXHR ) {
+            //    if(window.XDomainRequest) {
+            //        var xdr;
+//
+            //        return {
+            //            send: function( headers, completeCallback ) {
+            //                // Use Microsoft XDR
+            //                xdr = new XDomainRequest();
+            //                xdr.open("get", options.url);
+//
+            //                xdr.onload = function() {
+            //                    if (this.contentType.match(/\/xml/)) {
+            //                        var dom = new ActiveXObject("Microsoft.XMLDOM");
+            //                        dom.async = false;
+            //                        dom.loadXML(this.responseText);
+            //                        completeCallback(200, "success", [dom]);
+            //                    } else {
+            //                        completeCallback(200, "success", [this.responseText]);
+            //                    }
+//
+            //                };
+//
+            //                xdr.ontimeout = function() {
+            //                    completeCallback(408, "error", ["The request timed out."]);
+            //                };
+//
+            //                xdr.onerror = function() {
+            //                    completeCallback(404, "error", ["The requested resource could not be found."]);
+            //                };
+//
+            //                xdr.send();
+            //          },
+            //          abort: function() {
+            //              if(xdr)xdr.abort();
+            //          }
+            //        };
+            //    }
+            //});
+
+            $.ajax({
+                url: '//formspree.io/' + Base64.decode('ZGFuaWVsYy5yZWlkQGdtYWlsLmNvbQ=='),
+                method: 'POST',
+                data: $data,
+                dataType: 'json',
+                cache: false,
+                crossDomain: true,
+                success: showRSVPMessage($data['Attending?'], $data['First name'])
+            });
+        });
     }
 
     init();

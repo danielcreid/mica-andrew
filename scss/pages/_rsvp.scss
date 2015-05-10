@@ -5,9 +5,93 @@
     [type='tel'],
     [type='number'],
     [type='email'],
-    textarea { width: 100%; }
+    textarea {
+        width: 100%;
+        padding: 5px;
+    }
 
     textarea { max-width: 100%; }
+
+    [type='submit'] {
+        width: 100%;
+        padding: 0.5em 2em;
+        border: 0;
+        border-radius: 4px;
+        background-color: get-color(coral);
+        color: white;
+        transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover { background-color: get-color(coral, light); }
+    }
+
+    .rsvp-message {
+        display: none;
+        padding: 2em;
+        border-radius: 4px;
+        background-color: get-color(cream, lightest);
+        text-align: center;
+
+        h3 { margin-bottom: 0; }
+
+        .phone { display: inline-block; }
+    }
+
+    h3 { margin-bottom: 18px }
+
+    .well {
+        .wp-app-logo { max-height: 23px; }
+
+        p { margin-bottom: 18px; }
+
+        .app-store {
+            display: inline-block;
+
+            img { display: block; }
+        }
+    }
+
+    @include mq($screen--large, 'max-width') {
+        .u-grid__col {
+            width: 100% !important;
+            margin-top: 10px;
+
+            &:first-child { margin-top: 0; }
+        }
+    }
+
+    @include mq(1023px, 'max-width') {
+        .u-grid__col { margin-top: 0; }
+        .u-grid__col--6 { width: (6/12) * 100% !important; }
+    }
+
+    @include mq(500px, 'max-width') {
+        .u-grid__col {
+            width: 100% !important;
+            margin-top: 10px;
+
+            &:first-child { margin-top: 0; }
+        }
+    }
+
+
+
+    @include mq($screen--medium) {
+        .section__content {
+            &:nth-child(even) { padding-right: 0; }
+            &:nth-child(odd) { padding-left: 0; }
+            &:nth-child(odd) { padding-right: ($gutter--medium / 2); }
+            &:nth-child(even) { padding-left: ($gutter--medium / 2); }
+        }
+    }
+
+    @include mq($screen--large) {
+        .section__content {
+            &:nth-child(even) { padding-right: 0; }
+            &:nth-child(odd) { padding-left: 0; }
+            &:nth-child(odd) { padding-right: ($gutter--large / 2); }
+            &:nth-child(even) { padding-left: ($gutter--large / 2); }
+        }
+    }
 }
 
 .is-hidden { display: none; }
