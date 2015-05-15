@@ -126,6 +126,8 @@ body { padding: 0.444rem; }
         &:after { right: 0.667rem; }
     }
 
+    &__content { position: relative; }
+
     &__content + &__content { margin-top: 1rem; }
 
     &__meta {

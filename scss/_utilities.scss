@@ -108,6 +108,12 @@
     color: get-color(tan, darkest);
 }
 
+.well--awesome {
+    background-color: get-color(blue, lightest);
+    border-color: get-color(blue, light);
+    color: get-color(blue, darkest);
+}
+
 .well--alert {
     padding-left: calc(1rem + 48px + 1rem);
     background-color: get-color(coral, lightest);
@@ -122,3 +128,59 @@
         transform: translateY(-50%);
     }
 }
+
+// Text
+// -----------------------------------------------------------------------------
+
+.u-normal { font-weight: 400;   }
+.u-bold   { font-weight: 700;   }
+.u-italic { font-style: italic; }
+.u-muted { opacity: 0.5; }
+
+
+
+// CSS Grids
+// -----------------------------------------------------------------------------
+
+.u-grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.u-grid--collapse {
+    .u-grid__row { margin: 0; }
+    .u-grid__col { padding: 0; }
+}
+
+.u-grid__row {
+    @include clearfix;
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    margin-right: -10px;
+    margin-left: -10px;
+
+    &:first-child { margin-top: 0; }
+}
+
+.u-grid__col {
+    @include clearfix;
+    position: relative;
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.u-grid__col--1  { width:  (1/12) * 100%; }
+.u-grid__col--2  { width:  (2/12) * 100%; }
+.u-grid__col--3  { width:  (3/12) * 100%; }
+.u-grid__col--4  { width:  (4/12) * 100%; }
+.u-grid__col--5  { width:  (5/12) * 100%; }
+.u-grid__col--6  { width:  (6/12) * 100%; }
+.u-grid__col--7  { width:  (7/12) * 100%; }
+.u-grid__col--8  { width:  (8/12) * 100%; }
+.u-grid__col--9  { width:  (9/12) * 100%; }
+.u-grid__col--10 { width: (10/12) * 100%; }
+.u-grid__col--11 { width: (11/12) * 100%; }
+.u-grid__col--12 { width: (12/12) * 100%; }
