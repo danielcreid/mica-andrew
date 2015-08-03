@@ -1,3 +1,4 @@
+// Smooth scrolling for navigation
 $(function () {
     $("a[href*=#]:not([href=#])").click(function () {
         var e = this.hash;
@@ -17,7 +18,8 @@ $(function () {
     })
 });
 
-(function() {
+// RSVP Form functionality. Utilizes http://formspree.io/ API.
+/*(function() {
     'use strict';
 
     function clickInsideElement(e, className) {
@@ -53,7 +55,7 @@ $(function () {
     var isAttendingClass = 'is-attending';
     var isHiddenClass = 'is-hidden';
     var radioButtonInContext;
-    var formAction = '//formspree.io/' + Base64.decode('bW1iaWxicmV5MjFAZ21haWwuY29t');
+    var formAction = '//formspree.io/' + Base64.decode('TARGET_EMAIL_ADDRESS');
     var nextElement = document.createElement('input');
 
     setAttributes(nextElement, {
@@ -140,4 +142,4 @@ $(function () {
     }
 
     init();
-})();
+})();*/
