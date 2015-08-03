@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                 separator: ';',
             },
             dist: {
-                src: ['js/*.js'],
+                src: ['js/jquery-2.1.1.min.js', 'js/main.js'],
                 dest: 'scripts.js'
             }
         },
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'scripts.min.js': ['js/*.js']
+                    'scripts.min.js': ['js/jquery-2.1.1.min.js', 'js/main.js']
                 }
             }
         }
